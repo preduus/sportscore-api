@@ -1,0 +1,38 @@
+version: "3.8"
+services:
+  server:
+    container_name: "nodejs-sports-api"
+    build: .
+    environment:
+      - NODE_ENV=development
+      - DBNAME=pg-sports-db
+      - DBUSER=postgres
+      - DBPASSWORD=postgres
+      - DBHOST=db
+    volumes:
+      - ./:/app
+    depends_on:
+      - db
+    ports:
+      - "3100:3100"
+    networks:
+      - default  
+  db:
+    image: postgres
+    ports: 
+      - "5433:5432"
+    volumes:
+       - mydb:/var/lib/postgrespers
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: pg-sports-db
+    networks:
+      - default
+
+networks:
+  default:
+    driver: bridge
+
+volumes:
+  mydb: {}
