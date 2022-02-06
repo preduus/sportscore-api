@@ -11,10 +11,6 @@ class UseCase {
       throw new Error('Not found.');
     }
 
-    if (data.status) {
-      Object.assign(data, { status: {...exists.status, ...data.status}})
-    }
-
     await this.repository.update(id, data);
   }
 }
