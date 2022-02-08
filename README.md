@@ -4,7 +4,7 @@
     </a>
 </p>
 
-<h3 align="center">PyBilinguo</h3>
+<h3 align="center">SportScore API</h3>
 
 <div align="center">
 
