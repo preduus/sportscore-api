@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/sequelize": "^4.28.11",
+    "typescript": "^4.5.5",
     "express": "^4.17.2",
     "joi": "^17.6.0",
     "pg": "^8.7.3",
@@ -19,6 +19,7 @@
     "uuidv4": "^6.2.12"
   },
   "devDependencies": {
+    "@types/sequelize": "^4.28.11",
     "@types/express": "^4.17.13",
     "@types/joi": "^17.2.3",
     "@typescript-eslint/eslint-plugin": "^5.10.2",
@@ -26,7 +27,6 @@
     "eslint": "^8.8.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
-    "ts-node-dev": "^1.1.8",
-    "typescript": "^4.5.5"
+    "ts-node-dev": "^1.1.8"
   }
 }

@@ -1,0 +1,1917 @@
+{
+	"info": {
+		"_postman_id": "97154560-b445-40ec-b445-6e78da7178c5",
+		"name": "Sportscore API Docs",
+		"description": "# Introduction\n\nThe API aims to store information from various sports and distribute this information to applications that want to display it using the HTTP protocol.\n\n# Overview\nThe API is developed using typescript and validations are being performed on each request.\n\nFollow the steps below for more information.\n\n# Authentication\nThe API is public. Its privatization is yet to be carried out.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Matches",
+			"item": [
+				{
+					"name": "Add new match",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"homeTeamId\": \"0cc821a1-8d84-43c3-ad89-87d676c6b219\",\n    \"awayTeamId\": \"bfb6dc8e-ffb0-4344-a37b-120d1654d4a1\",\n    \"customId\": \"uhe-cjn-pld\",\n    \"status\": {\n        \"code\": 21,\n        \"description\": \"match not started\",\n        \"type\": \"notstarted\"\n    },\n    \"tournamentId\": \"1a06d3ed-8d83-4c0c-96e2-9b7a2f3794e9\",\n    \"slug\": \"psg-vs-mancity\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MATCHES_ENDPOINT}}",
+							"host": [
+								"{{MATCHES_ENDPOINT}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"homeTeamId\": \"0cc821a1-8d84-43c3-ad89-87d676c6b219\",\n    \"awayTeamId\": \"bfb6dc8e-ffb0-4344-a37b-120d1654d4a1\",\n    \"customId\": \"uhe-cjn-pld\",\n    \"status\": {\n        \"code\": 21,\n        \"description\": \"match not started\",\n        \"type\": \"notstarted\"\n    },\n    \"tournamentId\": \"1a06d3ed-8d83-4c0c-96e2-9b7a2f3794e9\",\n    \"slug\": \"psg-vs-mancity\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{MATCHES_ENDPOINT}}",
+									"host": [
+										"{{MATCHES_ENDPOINT}}"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Feb 2022 21:29:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Duplicated",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"homeTeamId\": \"0cc821a1-8d84-43c3-ad89-87d676c6b219\",\n    \"awayTeamId\": \"bfb6dc8e-ffb0-4344-a37b-120d1654d4a1\",\n    \"customId\": \"uhe-cjn-pld\",\n    \"status\": {\n        \"code\": 21,\n        \"description\": \"match not started\",\n        \"type\": \"notstarted\"\n    },\n    \"tournamentId\": \"1a06d3ed-8d83-4c0c-96e2-9b7a2f3794e9\",\n    \"slug\": \"psg-vs-mancity\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{MATCHES_ENDPOINT}}",
+									"host": [
+										"{{MATCHES_ENDPOINT}}"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d-SZe0SavmzppQER3eeM+ipT2Pb+o\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Feb 2022 21:29:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Already exists.\"\n}"
+						},
+						{
+							"name": "Empty body",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{MATCHES_ENDPOINT}}",
+									"host": [
+										"{{MATCHES_ENDPOINT}}"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "201"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c9-PZ2C71lf+ILgg+bE33/x8yzmWMg\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Feb 2022 21:30:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"message\": \"Validation error: \\\"homeTeamId\\\" is required, \\\"awayTeamId\\\" is required, \\\"customId\\\" is required, \\\"status\\\" is required, \\\"tournamentId\\\" is required, \\\"slug\\\" is required\"\n}"
+						}
+					]
+				},
+				{
+					"name": "List matches",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{MATCHES_ENDPOINT}}",
+							"host": [
+								"{{MATCHES_ENDPOINT}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{MATCHES_ENDPOINT}}",
+									"host": [
+										"{{MATCHES_ENDPOINT}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "407"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"197-fvOZKKlFb2+f+oRDMttrUxqZofo\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Feb 2022 21:30:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"eefc5720-81c0-4bad-8b14-588c0d3c350d\",\n        \"homeTeamId\": \"0cc821a1-8d84-43c3-ad89-87d676c6b219\",\n        \"awayTeamId\": \"bfb6dc8e-ffb0-4344-a37b-120d1654d4a1\",\n        \"customId\": \"uhe-cjn-pld\",\n        \"status\": {\n            \"code\": 21,\n            \"description\": \"match not started\",\n            \"type\": \"notstarted\"\n        },\n        \"tournamentId\": \"1a06d3ed-8d83-4c0c-96e2-9b7a2f3794e9\",\n        \"slug\": \"psg-vs-mancity\",\n        \"createdAt\": \"2022-02-08T21:29:14.985Z\",\n        \"updatedAt\": \"2022-02-08T21:29:14.985Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get match",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{MATCHES_ENDPOINT}}/eefc5720-81c0-4bad-8b14-588c0d3c350d",
+							"host": [
+								"{{MATCHES_ENDPOINT}}"
+							],
+							"path": [
+								"eefc5720-81c0-4bad-8b14-588c0d3c350d"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{MATCHES_ENDPOINT}}/eefc5720-81c0-4bad-8b14-588c0d3c350d",
+									"host": [
+										"{{MATCHES_ENDPOINT}}"
+									],
+									"path": [
+										"eefc5720-81c0-4bad-8b14-588c0d3c350d"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "405"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"195-JJ5e/+elUBwwJB5A71RyUKxTL5Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Feb 2022 21:32:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"eefc5720-81c0-4bad-8b14-588c0d3c350d\",\n    \"homeTeamId\": \"0cc821a1-8d84-43c3-ad89-87d676c6b219\",\n    \"awayTeamId\": \"bfb6dc8e-ffb0-4344-a37b-120d1654d4a1\",\n    \"customId\": \"uhe-cjn-pld\",\n    \"status\": {\n        \"code\": 21,\n        \"description\": \"match not started\",\n        \"type\": \"notstarted\"\n    },\n    \"tournamentId\": \"1a06d3ed-8d83-4c0c-96e2-9b7a2f3794e9\",\n    \"slug\": \"psg-vs-mancity\",\n    \"createdAt\": \"2022-02-08T21:29:14.985Z\",\n    \"updatedAt\": \"2022-02-08T21:29:14.985Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update match status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": {\n        \"description\": \"Match started\",\n        \"type\": \"inprogress\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MATCHES_ENDPOINT}}/eefc5720-81c0-4bad-8b14-588c0d3c350d",
+							"host": [
+								"{{MATCHES_ENDPOINT}}"
+							],
+							"path": [
+								"eefc5720-81c0-4bad-8b14-588c0d3c350d"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": {\n        \"description\": \"Match started\",\n        \"type\": \"inprogress\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{MATCHES_ENDPOINT}}/eefc5720-81c0-4bad-8b14-588c0d3c350d",
+									"host": [
+										"{{MATCHES_ENDPOINT}}"
+									],
+									"path": [
+										"eefc5720-81c0-4bad-8b14-588c0d3c350d"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Feb 2022 21:36:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Update match custom id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customId\": \"mynewcustomid\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MATCHES_ENDPOINT}}/eefc5720-81c0-4bad-8b14-588c0d3c350d",
+							"host": [
+								"{{MATCHES_ENDPOINT}}"
+							],
+							"path": [
+								"eefc5720-81c0-4bad-8b14-588c0d3c350d"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customId\": \"mynewcustomid\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{MATCHES_ENDPOINT}}/eefc5720-81c0-4bad-8b14-588c0d3c350d",
+									"host": [
+										"{{MATCHES_ENDPOINT}}"
+									],
+									"path": [
+										"eefc5720-81c0-4bad-8b14-588c0d3c350d"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Feb 2022 21:37:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Update match slug",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"slug\": \"psg-vs-realmadrid-2022\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MATCHES_ENDPOINT}}/eefc5720-81c0-4bad-8b14-588c0d3c350d",
+							"host": [
+								"{{MATCHES_ENDPOINT}}"
+							],
+							"path": [
+								"eefc5720-81c0-4bad-8b14-588c0d3c350d"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"slug\": \"psg-vs-realmadrid-2022\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{MATCHES_ENDPOINT}}/eefc5720-81c0-4bad-8b14-588c0d3c350d",
+									"host": [
+										"{{MATCHES_ENDPOINT}}"
+									],
+									"path": [
+										"eefc5720-81c0-4bad-8b14-588c0d3c350d"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Feb 2022 21:38:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Tournaments",
+			"item": [
+				{
+					"name": "Add new tournament",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": null
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"UEFA Champions League\",\n    \"display\": \"UCL\",\n    \"slug\": \"uefa-champions-league\",\n    \"seasonId\": \"19fd8aa5-c88e-495b-8ab2-6b7673cdda84\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TOURNAMENTS_ENDPOINT}}",
+									"host": [
+										"{{TOURNAMENTS_ENDPOINT}}"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Feb 2022 00:44:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Duplicated",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"UEFA Champions League\",\n    \"display\": \"UCL\",\n    \"slug\": \"uefa-champions-league\",\n    \"seasonId\": \"19fd8aa5-c88e-495b-8ab2-6b7673cdda84\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TOURNAMENTS_ENDPOINT}}",
+									"host": [
+										"{{TOURNAMENTS_ENDPOINT}}"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d-SZe0SavmzppQER3eeM+ipT2Pb+o\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Feb 2022 21:16:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Already exists.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "List tournaments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{TOURNAMENTS_ENDPOINT}}",
+							"host": [
+								"{{TOURNAMENTS_ENDPOINT}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TOURNAMENTS_ENDPOINT}}",
+									"host": [
+										"{{TOURNAMENTS_ENDPOINT}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "253"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fd-1CMreQzTd2qR1M3aet7Ng191bFg\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Feb 2022 21:18:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"1a06d3ed-8d83-4c0c-96e2-9b7a2f3794e9\",\n        \"name\": \"UEFA Champions League\",\n        \"display\": \"UCL\",\n        \"slug\": \"uefa-champions-league\",\n        \"seasonId\": \"19fd8aa5-c88e-495b-8ab2-6b7673cdda84\",\n        \"createdAt\": \"2022-02-07T00:44:04.249Z\",\n        \"updatedAt\": \"2022-02-07T00:44:04.249Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get tournament",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{TOURNAMENTS_ENDPOINT}}",
+							"host": [
+								"{{TOURNAMENTS_ENDPOINT}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TOURNAMENTS_ENDPOINT}}/1a06d3ed-8d83-4c0c-96e2-9b7a2f3794e9",
+									"host": [
+										"{{TOURNAMENTS_ENDPOINT}}"
+									],
+									"path": [
+										"1a06d3ed-8d83-4c0c-96e2-9b7a2f3794e9"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "251"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fb-fmGgkv4AUL4f20SK1EIsL+ZWia8\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Feb 2022 21:19:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"1a06d3ed-8d83-4c0c-96e2-9b7a2f3794e9\",\n    \"name\": \"UEFA Champions League\",\n    \"display\": \"UCL\",\n    \"slug\": \"uefa-champions-league\",\n    \"seasonId\": \"19fd8aa5-c88e-495b-8ab2-6b7673cdda84\",\n    \"createdAt\": \"2022-02-07T00:44:04.249Z\",\n    \"updatedAt\": \"2022-02-07T00:44:04.249Z\"\n}"
+						},
+						{
+							"name": "Invalid id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TOURNAMENTS_ENDPOINT}}/1a06d3ed-8d83-4c0c-96e2-9b7a2f3794e",
+									"host": [
+										"{{TOURNAMENTS_ENDPOINT}}"
+									],
+									"path": [
+										"1a06d3ed-8d83-4c0c-96e2-9b7a2f3794e"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "89"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"59-GBsc2rqwpkmUaVwv+Ag2j7ANYzg\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Feb 2022 21:20:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"invalid input syntax for type uuid: \\\"1a06d3ed-8d83-4c0c-96e2-9b7a2f3794e\\\"\"\n}"
+						},
+						{
+							"name": "Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TOURNAMENTS_ENDPOINT}}/1a06d3ed-8d83-4c0c-96e2-9b7a2f3794e8",
+									"host": [
+										"{{TOURNAMENTS_ENDPOINT}}"
+									],
+									"path": [
+										"1a06d3ed-8d83-4c0c-96e2-9b7a2f3794e8"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17-JG2JTE6to/D4sxc2pRx7Kk+opAc\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Feb 2022 21:20:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update tournament",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{TOURNAMENTS_ENDPOINT}}",
+							"host": [
+								"{{TOURNAMENTS_ENDPOINT}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"UEFA Champions League 2022\",\n    \"display\": \"UCL 2022\",\n    \"slug\": \"uefa-champions-league-2022\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TOURNAMENTS_ENDPOINT}}/1a06d3ed-8d83-4c0c-96e2-9b7a2f3794e9",
+									"host": [
+										"{{TOURNAMENTS_ENDPOINT}}"
+									],
+									"path": [
+										"1a06d3ed-8d83-4c0c-96e2-9b7a2f3794e9"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Feb 2022 21:22:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Empty body",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{TOURNAMENTS_ENDPOINT}}/1a06d3ed-8d83-4c0c-96e2-9b7a2f3794e9",
+									"host": [
+										"{{TOURNAMENTS_ENDPOINT}}"
+									],
+									"path": [
+										"1a06d3ed-8d83-4c0c-96e2-9b7a2f3794e9"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "79"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4f-3+q43Oye3kba9vXI30T7szSZPh8\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Feb 2022 21:21:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"message\": \"Validation error: \\\"value\\\" must have at least 1 key\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete tournament",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{TOURNAMENTS_ENDPOINT}}",
+							"host": [
+								"{{TOURNAMENTS_ENDPOINT}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{TOURNAMENTS_ENDPOINT}}/1a06d3ed-8d83-4c0c-96e2-9b7a2f3794e9",
+									"host": [
+										"{{TOURNAMENTS_ENDPOINT}}"
+									],
+									"path": [
+										"1a06d3ed-8d83-4c0c-96e2-9b7a2f3794e9"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "248"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f8-6/lvgY7bVxxqKhdqep+8SsJfG6g\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Feb 2022 23:45:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Invalid Id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{TOURNAMENTS_ENDPOINT}}/1a06d3ed-8d83-4c0c-96e2-9b7a2f3794e",
+									"host": [
+										"{{TOURNAMENTS_ENDPOINT}}"
+									],
+									"path": [
+										"1a06d3ed-8d83-4c0c-96e2-9b7a2f3794e"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "89"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"59-GBsc2rqwpkmUaVwv+Ag2j7ANYzg\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Feb 2022 21:24:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"invalid input syntax for type uuid: \\\"1a06d3ed-8d83-4c0c-96e2-9b7a2f3794e\\\"\"\n}"
+						},
+						{
+							"name": "Not found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{TOURNAMENTS_ENDPOINT}}/1a06d3ed-8d83-4c0c-96e2-9b7a2f3794e8",
+									"host": [
+										"{{TOURNAMENTS_ENDPOINT}}"
+									],
+									"path": [
+										"1a06d3ed-8d83-4c0c-96e2-9b7a2f3794e8"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17-JG2JTE6to/D4sxc2pRx7Kk+opAc\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Feb 2022 21:23:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Not found\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Teams",
+			"item": [
+				{
+					"name": "Add new team",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Paris Saint-Germain\",\n    \"title\": \"Paris Saint-Germain\",\n    \"display\": \"PSG\",\n    \"city\": \"Paris\",\n    \"state\": \"Paris\",\n    \"country\": \"France\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TEAMS_ENDPOINT}}",
+							"host": [
+								"{{TEAMS_ENDPOINT}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Paris Saint-Germain\",\n    \"title\": \"Paris Saint-Germain\",\n    \"display\": \"PSG\",\n    \"city\": \"Paris\",\n    \"state\": \"Paris\",\n    \"country\": \"France\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TEAMS_ENDPOINT}}",
+									"host": [
+										"{{TEAMS_ENDPOINT}}"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Feb 2022 23:25:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Duplicated",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Paris Saint-Germain\",\n    \"title\": \"Paris Saint-Germain\",\n    \"display\": \"PSG\",\n    \"city\": \"Paris\",\n    \"state\": \"Paris\",\n    \"country\": \"France\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TEAMS_ENDPOINT}}",
+									"host": [
+										"{{TEAMS_ENDPOINT}}"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d-SZe0SavmzppQER3eeM+ipT2Pb+o\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Feb 2022 23:28:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Already exists.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "List teams",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{TEAMS_ENDPOINT}}",
+							"host": [
+								"{{TEAMS_ENDPOINT}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TEAMS_ENDPOINT}}",
+									"host": [
+										"{{TEAMS_ENDPOINT}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "484"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e4-K3DuWKoy/phH4LWpxjHN+C5DDKU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Feb 2022 23:32:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"0cc821a1-8d84-43c3-ad89-87d676c6b219\",\n        \"name\": \"Paris Saint-Germain\",\n        \"title\": \"Paris Saint-Germain\",\n        \"display\": \"PSG\",\n        \"city\": \"Paris\",\n        \"state\": \"Paris\",\n        \"country\": \"France\",\n        \"createdAt\": \"2022-02-06T23:25:31.686Z\",\n        \"updatedAt\": \"2022-02-06T23:25:31.686Z\"\n    },\n    {\n        \"id\": \"bfb6dc8e-ffb0-4344-a37b-120d1654d4a1\",\n        \"name\": \"Real Madrid\",\n        \"title\": \"Real Madrid\",\n        \"display\": \"RMD\",\n        \"city\": \"Madrid\",\n        \"state\": \"Madrid\",\n        \"country\": \"Spain\",\n        \"createdAt\": \"2022-02-06T23:31:30.143Z\",\n        \"updatedAt\": \"2022-02-06T23:31:30.143Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get team",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{TEAMS_ENDPOINT}}/0cc821a1-8d84-43c3-ad89-87d676c6b219",
+							"host": [
+								"{{TEAMS_ENDPOINT}}"
+							],
+							"path": [
+								"0cc821a1-8d84-43c3-ad89-87d676c6b219"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TEAMS_ENDPOINT}}/0cc821a1-8d84-43c3-ad89-87d676c6b219",
+									"host": [
+										"{{TEAMS_ENDPOINT}}"
+									],
+									"path": [
+										"0cc821a1-8d84-43c3-ad89-87d676c6b219"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "248"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f8-6/lvgY7bVxxqKhdqep+8SsJfG6g\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Feb 2022 23:45:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"0cc821a1-8d84-43c3-ad89-87d676c6b219\",\n    \"name\": \"Paris Saint-Germain\",\n    \"title\": \"Paris Saint-Germain\",\n    \"display\": \"PSG\",\n    \"city\": \"Paris\",\n    \"state\": \"Paris\",\n    \"country\": \"France\",\n    \"createdAt\": \"2022-02-06T23:25:31.686Z\",\n    \"updatedAt\": \"2022-02-06T23:25:31.686Z\"\n}"
+						},
+						{
+							"name": "Invalid Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TEAMS_ENDPOINT}}/0cc821a1-8d84-43c3-ad89-87d676c6b21",
+									"host": [
+										"{{TEAMS_ENDPOINT}}"
+									],
+									"path": [
+										"0cc821a1-8d84-43c3-ad89-87d676c6b21"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "89"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"59-aO5h+JveHZ1I/1LadjxYoA1aww4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Feb 2022 23:46:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"invalid input syntax for type uuid: \\\"0cc821a1-8d84-43c3-ad89-87d676c6b21\\\"\"\n}"
+						},
+						{
+							"name": "Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TEAMS_ENDPOINT}}/0cc821a1-8d84-43c3-ad89-87d676c6b218",
+									"host": [
+										"{{TEAMS_ENDPOINT}}"
+									],
+									"path": [
+										"0cc821a1-8d84-43c3-ad89-87d676c6b218"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17-JG2JTE6to/D4sxc2pRx7Kk+opAc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Feb 2022 23:46:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update team",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Paris Saint-Germain\",\n    \"display\": \"PSG\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TEAMS_ENDPOINT}}/0cc821a1-8d84-43c3-ad89-87d676c6b219",
+							"host": [
+								"{{TEAMS_ENDPOINT}}"
+							],
+							"path": [
+								"0cc821a1-8d84-43c3-ad89-87d676c6b219"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Paris Saint-Germain\",\n    \"display\": \"PSG\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TEAMS_ENDPOINT}}/0cc821a1-8d84-43c3-ad89-87d676c6b219",
+									"host": [
+										"{{TEAMS_ENDPOINT}}"
+									],
+									"path": [
+										"0cc821a1-8d84-43c3-ad89-87d676c6b219"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Feb 2022 00:36:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Empty body",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{TEAMS_ENDPOINT}}/0cc821a1-8d84-43c3-ad89-87d676c6b219",
+									"host": [
+										"{{TEAMS_ENDPOINT}}"
+									],
+									"path": [
+										"0cc821a1-8d84-43c3-ad89-87d676c6b219"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "79"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4f-3+q43Oye3kba9vXI30T7szSZPh8\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Feb 2022 00:37:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"message\": \"Validation error: \\\"value\\\" must have at least 1 key\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete team",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{TEAMS_ENDPOINT}}/0cc821a1-8d84-43c3-ad89-87d676c6b219",
+							"host": [
+								"{{TEAMS_ENDPOINT}}"
+							],
+							"path": [
+								"0cc821a1-8d84-43c3-ad89-87d676c6b219"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{TEAMS_ENDPOINT}}/0cc821a1-8d84-43c3-ad89-87d676c6b219",
+									"host": [
+										"{{TEAMS_ENDPOINT}}"
+									],
+									"path": [
+										"0cc821a1-8d84-43c3-ad89-87d676c6b219"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "248"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f8-6/lvgY7bVxxqKhdqep+8SsJfG6g\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Feb 2022 23:45:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Invalid Id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{TEAMS_ENDPOINT}}/0cc821a1-8d84-43c3-ad89-87d676c6b21",
+									"host": [
+										"{{TEAMS_ENDPOINT}}"
+									],
+									"path": [
+										"0cc821a1-8d84-43c3-ad89-87d676c6b21"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "89"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"59-aO5h+JveHZ1I/1LadjxYoA1aww4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Feb 2022 23:46:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"invalid input syntax for type uuid: \\\"0cc821a1-8d84-43c3-ad89-87d676c6b21\\\"\"\n}"
+						},
+						{
+							"name": "Not found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{TEAMS_ENDPOINT}}/0cc821a1-8d84-43c3-ad89-87d676c6b218",
+									"host": [
+										"{{TEAMS_ENDPOINT}}"
+									],
+									"path": [
+										"0cc821a1-8d84-43c3-ad89-87d676c6b218"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17-JG2JTE6to/D4sxc2pRx7Kk+opAc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Feb 2022 23:46:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Not found\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:3100"
+		},
+		{
+			"key": "MATCHES_ENDPOINT",
+			"value": "{{BASE_URL}}/matches"
+		},
+		{
+			"key": "TEAMS_ENDPOINT",
+			"value": "{{BASE_URL}}/teams"
+		},
+		{
+			"key": "TOURNAMENTS_ENDPOINT",
+			"value": "{{BASE_URL}}/tournaments"
+		}
+	]
+}
